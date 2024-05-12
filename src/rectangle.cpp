@@ -1,4 +1,4 @@
-#include "rectangle.h"
+#include "rectangle.hpp"
 #include <iostream>
 
 Rectangle::Rectangle(Point center, std::string name, int width, int height)
