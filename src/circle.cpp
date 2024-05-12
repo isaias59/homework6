@@ -7,7 +7,7 @@ Circle::Circle(Point center, std::string name, int radius)
     : Shape(center, name), radius(radius) {}
 
 double Circle::area() const {
-    return 3.14 * radius * radius;
+    return 3.1415 * radius * radius;
 }
 
 void Circle::draw(std::ostream& out) const {
