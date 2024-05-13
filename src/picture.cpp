@@ -28,12 +28,7 @@ Picture& Picture::operator=(const Picture& other) {
 }
 
 Picture& Picture::operator=(Picture&& other) {
-    if (this != &other) {
-        swap(other);
-        // Reset 'other' to a valid state
-        other.head = nullptr;
-        other.tail = nullptr;
-    }
+   swap(other);
     return *this;
 }
 
