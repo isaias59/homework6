@@ -51,7 +51,7 @@ void Picture::add(const Shape& shape) {
     Shape* clone = shape.clone();
     if (!clone) {
         // Error handling: Unable to clone shape
-        cout << "Error: Unable to clone shape." << std::endl;
+        std::cout << "Error: Unable to clone shape." << std::endl;
         return;
     }
 
@@ -60,7 +60,7 @@ void Picture::add(const Shape& shape) {
     if (!node) {
         // Error handling: Memory allocation failed for list node
         delete clone; // Clean up cloned shape
-        cout << "Error: Memory allocation failed for list node." << std::endl;
+        std::cout << "Error: Memory allocation failed for list node." << std::endl;
         return;
     }
 
