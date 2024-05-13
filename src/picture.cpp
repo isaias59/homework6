@@ -34,37 +34,10 @@ Picture& Picture::operator=(Picture&& other) {
     return *this;
 }
 
-/*void Picture::add(const Shape& shape) {
-    Shape* clone = shape.clone();
-    ListNode* node = new ListNode{ clone, nullptr };
-
-    if (tail) {
-        tail->next = node;
-        tail = node;
-    }
-    else {
-        head = tail = node;
-    }
-}*/
 void Picture::add(const Shape& shape) {
-    // Attempt to clone the shape
     Shape* clone = shape.clone();
-    if (!clone) {
-        // Error handling: Unable to clone shape
-        std::cout << "Error: Unable to clone shape." << std::endl;
-        return;
-    }
-
-    // Create a new list node
     ListNode* node = new ListNode{ clone, nullptr };
-    if (!node) {
-        // Error handling: Memory allocation failed for list node
-        delete clone; // Clean up cloned shape
-        std::cout << "Error: Memory allocation failed for list node." << std::endl;
-        return;
-    }
 
-    // Insert the node into the list
     if (tail) {
         tail->next = node;
         tail = node;
