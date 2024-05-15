@@ -38,7 +38,7 @@ void Picture::add(const Shape& shape) {
     Shape* clone = shape.clone();
     ListNode* node = new ListNode{ clone, nullptr };
 
-    if (tail) {
+    if (head) {
         tail->next = node;
         tail = node;
     }
