@@ -34,7 +34,7 @@ Picture& Picture::operator=(Picture&& other) {
     return *this;
 }
 
-void Picture::add(const Shape& shape) {
+/*void Picture::add(const Shape& shape) {
     Shape* clone = shape.clone();
     ListNode* node = new ListNode{ clone, nullptr };
 
@@ -44,6 +44,17 @@ void Picture::add(const Shape& shape) {
     }
     else {
         head = tail = node;
+    }
+}*/
+void Picture::add(const Shape& shape) {
+
+
+    if (head) {
+        tail->next = new ListNode(shape,nullptr);
+        tail = tail->next;
+    }
+    else {
+        head = tail = new ListNode;
     }
 }
 
