@@ -48,13 +48,15 @@ Picture& Picture::operator=(Picture&& other) {
 }*/
 void Picture::add(const Shape& shape) {
 
+Shape* clone = shape.clone(); 
+    ListNode* node = new ListNode{ clone, nullptr };
 
     if (head) {
-        tail->next = new ListNode(shape,nullptr);
-        tail = tail->next;
+        tail->next = node;
+        tail = node;
     }
     else {
-        head = tail = new ListNode;
+        head = tail = node;
     }
 }
 
