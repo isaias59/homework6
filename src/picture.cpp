@@ -5,8 +5,9 @@
 Picture::Picture() : head(nullptr), tail(nullptr) {}
 
 Picture::Picture(const Picture& other) {
-    for (ListNode* node = other.head; node; node = node->next) {
-        add(*node->shape);
+     for (ListNode* node = other.head; node; node = node->next) {
+        Shape* clone = node->shape->clone();
+        add(*clone);
     }
 }
 
