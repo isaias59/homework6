@@ -1,3 +1,4 @@
+
 #include "picture.hpp"
 ///////////////
 #include <iostream>
@@ -5,9 +6,8 @@
 Picture::Picture() : head(nullptr), tail(nullptr) {}
 
 Picture::Picture(const Picture& other) {
-     for (ListNode* node = other.head; node; node = node->next) {
-        Shape* clone = node->shape->clone();
-        add(*clone);
+    for (ListNode* node = other.head; node; node = node->next) {
+        add(*node->shape);
     }
 }
 
